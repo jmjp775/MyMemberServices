@@ -1,0 +1,69 @@
+﻿@page
+@model MyMemberServices.Pages.WebServices.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ServiceAccountRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.ServiceAccountName" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.ServiceAccountName" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.ServiceAccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.NonProdOrProdRequest" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.NonProdOrProdRequest" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.NonProdOrProdRequest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.RequestStatus" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.RequestStatus" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.RequestStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.ClientAppName" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.ClientAppName" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.ClientAppName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.ContactName" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.ContactName" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.ContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.ContactEmail" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.ContactEmail" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.ContactEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.ContactPhoneNumber" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.ContactPhoneNumber" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.ContactPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceAccountRequest.DateCreated" class="control-label"></label>
+                <input asp-for="ServiceAccountRequest.DateCreated" class="form-control" />
+                <span asp-validation-for="ServiceAccountRequest.DateCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

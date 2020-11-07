@@ -1,0 +1,78 @@
+﻿@page
+@model MyMemberServices.Pages.WebServices.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].ServiceAccountName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].NonProdOrProdRequest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].RequestStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].ClientAppName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].ContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].ContactEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].ContactPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceAccountRequest[0].DateCreated)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ServiceAccountRequest) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceAccountName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NonProdOrProdRequest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClientAppName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RequestID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RequestID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RequestID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
