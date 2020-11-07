@@ -8,6 +8,7 @@ namespace MyMemberServices.Models
 {
     public class ServiceAccountRequest
     {
+        [Key]
         public int RequestID { get; set; }
         public string ServiceAccountName { get; set; }
         public string NonProdOrProdRequest { get; set; }
